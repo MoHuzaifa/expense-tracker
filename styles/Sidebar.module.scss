@@ -1,0 +1,67 @@
+@import 'colors';
+
+.sideBar {
+	height: 100vh;
+	width: 6rem;
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+	padding-top: 1rem;
+	background: $secondary-shade;
+  transition: width 100ms;
+
+	.logo {
+		font-size: 4rem;
+		padding: 1rem;
+		border-radius: 20%;
+		color: $primary-shade;
+		background: #f0f4ff;
+		cursor: pointer;
+		margin-bottom: 4rem;
+	}
+
+	.outerContainer {
+    width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+    cursor: pointer;
+
+		.icon {
+			@extend .logo;
+			color: $secondary-text;
+			background: none;
+			margin-bottom: 0rem;
+		}
+
+		.iconText {
+			color: $primary-text;
+			position: relative;
+			left: -10px;
+			opacity: 0;
+			transition: all 50ms;
+		}
+
+    &:hover {
+      background: $primary-shade;
+
+      .icon {
+        color: $primary-background;
+      }
+
+      .iconText {
+        color: $primary-background;
+      }
+    }
+	}
+
+	&:hover {
+    width: 13rem;
+
+		.iconText {
+			opacity: 1;
+			left: 10px;
+      transition: all 300ms;
+		}
+	}
+}
